@@ -3,13 +3,23 @@
 ## Table of Contents
 1. [Project Overview](#project-overview)
 2. [Setup Instructions](#setup-instructions)
-3. [Project Structure](#project-structure)
-4. [Backend Architecture](#backend-architecture)
-5. [Frontend Architecture](#frontend-architecture)
-6. [Environment Variables](#environment-variables)
-7. [API Documentation](#api-documentation)
-8. [Technical Details](#technical-details)
-9. [Technical Challenges and Design Decisions](#technical-challenges-and-design-decisions)
+   - [Prerequisites](#prerequisites)
+   - [Backend Setup](#backend-setup)
+   - [Frontend Setup](#frontend-setup)
+3. [Environment Variables](#environment-variables)
+4. [Project Structure](#project-structure)
+5. [Backend Architecture](#backend-architecture)
+   - [Main Application](#main-application-mainpy)
+   - [Screenshot Module](#screenshot-module-screenshotpy)
+   - [LLM Module](#llm-module-llmpy)
+6. [API Documentation](#api-documentation)
+   - [Screenshot Endpoints](#screenshot-endpoints)
+   - [Item Management Endpoints](#item-management-endpoints)
+   - [System Endpoints](#system-endpoints)
+7. [Technical Details](#technical-details)
+   - [Screenshot Processing Pipeline](#screenshot-processing-pipeline)
+   - [Image Processing Constraints](#image-processing-constraints)
+8. [Technical Challenges and Design Decisions](#technical-challenges-and-design-decisions)
 
 ## Project Overview
 The Orchids Challenge project is a full-stack web application built using FastAPI for the backend and Next.js for the frontend. The project implements advanced webpage screenshot capture, AI-powered HTML generation, and web interactions. It uses Playwright for high-quality screenshots and OpenRouter's Claude model for intelligent HTML generation.
@@ -42,6 +52,14 @@ The Orchids Challenge project is a full-stack web application built using FastAP
    ```bash
    uv run fastapi dev
    ```
+## Environment Variables
+
+Create a `.env` file based on `env.example` with the following variables:
+
+```env
+# Backend Environment Variables
+OPENROUTER_API_KEY=your_openrouter_api_key    # Required for AI HTML generation
+```
 
 ### Frontend Setup
 1. Navigate to the frontend directory:
@@ -58,6 +76,7 @@ The Orchids Challenge project is a full-stack web application built using FastAP
    ```bash
    npm run dev
    ```
+
 
 ## Project Structure
 
@@ -123,27 +142,6 @@ Key Features:
 - Intelligent HTML generation with context awareness
 - Support for multi-segment page analysis
 
-## Frontend Architecture
-
-The frontend is built using Next.js 13+ with:
-- TypeScript for type safety
-- Modern React patterns and hooks
-- Tailwind CSS for styling
-- ESLint for code quality
-
-## Environment Variables
-
-Create a `.env` file based on `.env.example` with the following variables:
-
-```env
-# Backend Environment Variables
-OPENROUTER_API_KEY=your_openrouter_api_key    # Required for AI HTML generation
-MODEL_NAME=claude-3-sonnet                     # OpenRouter model selection
-TEMPERATURE=0.7                                # AI response temperature
-
-# Frontend Environment Variables
-NEXT_PUBLIC_API_URL=http://localhost:8000      # Backend API endpoint
-```
 
 ## API Documentation
 
@@ -204,23 +202,6 @@ NEXT_PUBLIC_API_URL=http://localhost:8000      # Backend API endpoint
 - Default JPEG quality: 85
 - Automatic quality adjustment
 - RGB color space conversion
-
-### Security Considerations
-
-1. API Security
-   - Input validation using Pydantic
-   - CORS configuration
-   - Error handling and sanitization
-
-2. Environment Variables
-   - Secure API key management
-   - Configuration isolation
-   - Environment-specific settings
-
-3. Browser Automation Security
-   - Headless mode
-   - Custom user agent
-   - Request headers management
 
 ## Technical Challenges and Design Decisions
 
