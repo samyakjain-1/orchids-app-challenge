@@ -1,0 +1,94 @@
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Python Backend
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+*.egg-info/
+dist/
+build/
+*.egg
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+.hypothesis/
+.pytype/
+.mypy_cache/
+.pyre/
+.uv/
+uv.lock
+
+# Python IDE specific
+.idea/
+.vscode/
+*.swp
+*.swo
+.ropeproject/
+.project
+.pydevproject
+.settings/
+
+# Frontend - Next.js
+# dependencies
+node_modules/
+/.pnp
+.pnp.js
+.yarn/install-state.gz
+
+# testing
+/coverage
+.nyc_output
+
+# next.js
+.next/
+out/
+
+# production
+build/
+dist/
+
+# misc
+*.pem
+.env*.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# Project specific
+cloned_output.html
+*.log
+temp/
+uploads/
+screenshots/
+
+# Local development
+.python-version
+.nvmrc
+.tool-versions 
